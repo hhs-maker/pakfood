@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Dark Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      overflow: hidden;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #0f2027);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 35px 30px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: 600;
+      color: #00f9ff;
+      text-shadow: 0 0 10px #00f9ff99;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    .login-container input:focus {
+      box-shadow: 0 0 10px #00f9ff;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: linear-gradient(to right, #00f9ff, #007cf0);
+      border: none;
+      border-radius: 10px;
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.4s ease;
+    }
+
+    .login-container button:hover {
+      background: linear-gradient(to right, #007cf0, #00f9ff);
+    }
+
+    .error-message {
+      color: #ff7b7b;
+      font-size: 14px;
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 500px) {
+      .login-container {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container" id="loginBox">
+    <h2>Login</h2>
+    <input type="email" id="login-email" placeholder="Email" />
+    <input type="password" id="login-password" placeholder="Password" />
+    <div id="error" class="error-message"></div>
+    <button onclick="handleLogin()" >Login</button>
+    <h5 style="color: #fff; font-weight: bold; ">don't have an account go to <a href="/index.html " style="color: #00f9ff; text-decoration: none;">signup</a></h5>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
