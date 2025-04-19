@@ -78,7 +78,7 @@ function handleSignup() {
         // Add a delay before redirecting to the login page
         setTimeout(() => {
           window.location.href = "login.html"; // Redirect to login page
-        }, 5000);  // Delay of 2 seconds (2000 milliseconds)
+        }, 1500);  // Delay of 2 seconds (2000 milliseconds)
       });
     })
     .catch((error) => {
